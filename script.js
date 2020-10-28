@@ -4,6 +4,15 @@ var timerEl = document.querySelector("#countdown");
 
 timerEl.textContent = timerCount;
 
+//start timer on click function
+startQuiz.addEventListener("click", function(){
+
+    $(document).ready(function(){
+        $("#startBtn").hide();
+        $("#mainBody").show();
+    })
+
+//creating function for timer
 var timer = window.setInterval(function() {
     timerCount--;
     timerEl.textContent = timerCount
@@ -12,6 +21,8 @@ var timer = window.setInterval(function() {
         clearInterval(timer)
     }
 }, 1000)
+
+})
 
 //creating questions and answers
 var questions = [
@@ -57,7 +68,7 @@ optionA.addEventListener("click", function() {
         questionsPointer++
         setQuestions()
     } else {
-        alert("wrong")
+        console.log("wrong")
         timerCount -= 10
     }
 })
@@ -68,7 +79,7 @@ optionB.addEventListener("click", function() {
         questionsPointer++
         setQuestions()
     } else {
-        alert("wrong")
+        console.log("wrong")
         timerCount -= 10
     }
 })
@@ -79,7 +90,11 @@ optionC.addEventListener("click", function() {
         questionsPointer++
         setQuestions()
     } else {
-        alert("wrong")
+        console.log("wrong")
         timerCount -= 10
     }
+})
+
+$(document).ready(function(){
+    $("#mainBody").hide();
 })
